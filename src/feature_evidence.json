@@ -1,0 +1,279 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-marketing-website-ui-to-match-a-modern-energetic-colorful-delivery-brand-theme-using-gradients-inspired-by-red-orange-black-white-with-smooth-animations-and-hover-effects-and-ensure-all-text-sections-sit-on-colorful-gradient-section-backgrounds-avoid-plain-white-blocks",
+      "featureTitle": "Update the marketing website UI to match a modern, energetic, colorful delivery-brand theme using gradients inspired by red/orange/black/white, with smooth animations and hover effects, and ensure all text sections sit on colorful/gradient section backgrounds (avoid plain white blocks).",
+      "files": [
+        "frontend/src/components/GradientSection.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/HowItWorksPage.tsx",
+        "frontend/src/pages/RateCardPage.tsx",
+        "frontend/src/pages/ServicesPage.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-revise-the-home-page-hero-to-match-the-requested-copy-and-layout-show-a-big-bold-hero-tagline-exactly-as-fast-local-trusted-delivery-in-bikaner-include-a-delivery-rider-illustration-plus-a-simple-bike-animation-and-include-clear-primary-cta-buttons-labeled-book-delivery-on-whatsapp-and-check-rates-that-navigate-to-whatsapp-and-the-rate-card-page-respectively",
+      "featureTitle": "Revise the Home page hero to match the requested copy and layout: show a big bold hero tagline exactly as \"Fast • Local • Trusted Delivery in Bikaner\", include a delivery rider illustration plus a simple bike animation, and include clear primary CTA buttons labeled \"Book Delivery on WhatsApp\" and \"Check Rates\" that navigate to WhatsApp and the rate card page respectively.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-whatsapp-floating-button-is-always-visible-site-wide-and-uses-the-project-s-whatsapp-number-consistently-across-the-header-ctas-hero-ctas-contact-page-and-floating-cta",
+      "featureTitle": "Ensure the WhatsApp floating button is always visible site-wide and uses the project’s WhatsApp number consistently across the Header CTAs, hero CTAs, contact page, and floating CTA.",
+      "files": [
+        "frontend/src/components/FloatingWhatsAppCTA.tsx",
+        "frontend/src/components/HeaderNav.tsx",
+        "frontend/src/components/SiteFooter.tsx",
+        "frontend/src/config/contact.ts",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-all-user-facing-copy-across-the-site-to-english-including-home-services-contact-and-any-other-public-pages-keeping-the-content-aligned-with-bikaner-express-delivery-s-positioning-fast-local-trustworthy-and-the-requested-section-topics",
+      "featureTitle": "Update all user-facing copy across the site to English (including Home/Services/Contact and any other public pages), keeping the content aligned with Bikaner Express Delivery’s positioning (fast, local, trustworthy) and the requested section topics.",
+      "files": [
+        "frontend/src/components/SiteFooter.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/HowItWorksPage.tsx",
+        "frontend/src/pages/RateCardPage.tsx",
+        "frontend/src/pages/ServicesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-adjust-homepage-sections-to-include-1-about-company-local-delivery-in-bikaner-speed-trust-photo-proof-2-services-list-with-the-exact-requested-service-categories-3-rate-card-preview-or-link-4-founder-section-with-founder-name-sarwan-singh-rathore-a-founder-photo-area-and-a-short-founder-message-and-5-website-proof-trust-section-describing-delivery-photo-proof-whatsapp-confirmation-and-real-time-coordination",
+      "featureTitle": "Add/adjust homepage sections to include: (1) About Company (local delivery in Bikaner, speed, trust, photo proof), (2) Services list with the exact requested service categories, (3) Rate Card preview or link, (4) Founder section with founder name \"Sarwan Singh Rathore\", a founder photo area, and a short founder message, and (5) Website Proof & Trust section describing delivery photo proof, WhatsApp confirmation, and real-time coordination.",
+      "files": [
+        "frontend/src/components/FounderCard.tsx",
+        "frontend/src/components/HomeServicesCategories.tsx",
+        "frontend/src/components/ProofAndTrustSection.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-join-as-a-rider-section-with-an-apply-as-rider-button-and-a-simple-rider-application-form-collecting-name-mobile-bike-available-yes-no-and-area-persist-submitted-applications-in-the-backend-and-surface-them-in-the-admin-dashboard-for-review",
+      "featureTitle": "Implement a \"Join as a Rider\" section with an \"Apply as Rider\" button and a simple rider application form collecting: Name, Mobile, Bike available (Yes/No), and Area; persist submitted applications in the backend and surface them in the Admin dashboard for review.",
+      "files": [
+        "frontend/src/components/RiderApplicationSection.tsx",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/AdminPage.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-rate-card-page-to-include-a-simple-clear-pricing-table-and-an-additional-note-about-fuel-efficient-bike-delivery-40-km-average",
+      "featureTitle": "Update the Rate Card page to include a simple, clear pricing table and an additional note about fuel-efficient bike delivery (\"40 km average\").",
+      "files": [
+        "frontend/src/pages/RateCardPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-admin-dashboard-for-operational-workflow-that-supports-order-management-create-view-edit-orders-rider-assignment-order-status-updates-pending-picked-delivered-uploading-delivery-proof-photos-and-storing-customer-contact-details-restrict-access-to-admins-only",
+      "featureTitle": "Add an Admin dashboard for operational workflow that supports: order management (create/view/edit orders), rider assignment, order status updates (Pending / Picked / Delivered), uploading delivery proof photos, and storing customer contact details; restrict access to admins only.",
+      "files": [
+        "frontend/src/components/admin/AdminOrdersPanel.tsx",
+        "frontend/src/components/admin/AdminRidersPanel.tsx",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/AdminPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-rider-portal-with-internet-identity-login-that-allows-riders-to-view-assigned-deliveries-update-delivery-status-pending-picked-delivered-and-upload-delivery-proof-photos-for-assigned-orders-only-restrict-access-to-users-with-the-rider-role",
+      "featureTitle": "Create a Rider portal with Internet Identity login that allows riders to: view assigned deliveries, update delivery status (Pending / Picked / Delivered), and upload delivery proof photos for assigned orders only; restrict access to users with the rider role.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/HeaderNav.tsx",
+        "frontend/src/components/RiderGuard.tsx",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/RiderPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-embed-google-maps-location-on-the-contact-page-and-ensure-seo-metadata-is-optimized-for-the-keyword-phrase-bikaner-delivery-service-across-the-site-document-title-description-keywords-and-per-page-meta-where-applicable",
+      "featureTitle": "Embed Google Maps location on the Contact page and ensure SEO metadata is optimized for the keyword phrase \"Bikaner delivery service\" across the site (document title/description/keywords and per-page meta where applicable).",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/hooks/usePageMeta.ts",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/RateCardPage.tsx",
+        "frontend/src/pages/ServicesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-footer-to-include-company-name-bikaner-express-delivery-phone-whatsapp-website-link-and-the-service-area-text-serving-bikaner-city-villages-dhanis",
+      "featureTitle": "Update the footer to include: company name \"Bikaner Express Delivery\", phone & WhatsApp, website link, and the service area text \"Serving Bikaner city, villages & dhanis\".",
+      "files": [
+        "frontend/src/components/SiteFooter.tsx",
+        "frontend/src/config/contact.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-uploaded-image-file-1768716215296-jpg-to-the-frontend-static-assets-and-use-it-as-the-founder-photo-in-the-founder-section-with-a-graceful-fallback-placeholder-if-the-asset-is-missing",
+      "featureTitle": "Add the uploaded image file \"1768716215296.jpg\" to the frontend static assets and use it as the founder photo in the Founder section, with a graceful fallback placeholder if the asset is missing.",
+      "files": [
+        "frontend/src/components/FounderCard.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

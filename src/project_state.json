@@ -1,0 +1,175 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a modern, vibrant, mobile-first website for \"Bikaner Express Delivery\" with strong branding/gradients, animated UI, key marketing sections (services, rates, trust), WhatsApp-first CTAs, plus Admin and Rider portals for order workflow and delivery proof management.",
+  "architectural_notes": [
+    "Mobile-first responsive design with modern UI animations and hover effects",
+    "Brand-forward visual system: vibrant colorful backgrounds and red/orange/black/white gradients for fast-delivery theme",
+    "Portals: separate Admin dashboard and Rider panel with authentication and role-based access",
+    "Order workflow includes statuses (Pending/Picked/Delivered) and delivery proof photo upload support",
+    "SEO and performance are explicit requirements (optimize for \"Bikaner delivery service\"; fast loading)"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Delivery rider illustration, modern flat style, red/orange/black/white palette (rider-illustration.dim_1200x900.png)\n- Motorbike side-view illustration suitable for a looping motion effect, matching the same palette (bike-illustration.dim_900x450.png)\n- Abstract fast-delivery gradient background texture with red/orange/black/white accents (speed-gradient-bg.dim_1920x1080.png)",
+  "existing_features": [
+    {
+      "id": "feature-update-the-marketing-website-ui-to-match-a-modern-energetic-colorful-delivery-brand-theme-using-gradients-inspired-by-red-orange-black-white-with-smooth-animations-and-hover-effects-and-ensure-all-text-sections-sit-on-colorful-gradient-section-backgrounds-avoid-plain-white-blocks",
+      "title": "Update the marketing website UI to match a modern, energetic, colorful delivery-brand theme using gradients inspired by red/orange/black/white, with smooth animations and hover effects, and ensure all text sections sit on colorful/gradient section backgrounds (avoid plain white blocks).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-revise-the-home-page-hero-to-match-the-requested-copy-and-layout-show-a-big-bold-hero-tagline-exactly-as-fast-local-trusted-delivery-in-bikaner-include-a-delivery-rider-illustration-plus-a-simple-bike-animation-and-include-clear-primary-cta-buttons-labeled-book-delivery-on-whatsapp-and-check-rates-that-navigate-to-whatsapp-and-the-rate-card-page-respectively",
+      "title": "Revise the Home page hero to match the requested copy and layout: show a big bold hero tagline exactly as \"Fast • Local • Trusted Delivery in Bikaner\", include a delivery rider illustration plus a simple bike animation, and include clear primary CTA buttons labeled \"Book Delivery on WhatsApp\" and \"Check Rates\" that navigate to WhatsApp and the rate card page respectively.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-whatsapp-floating-button-is-always-visible-site-wide-and-uses-the-project-s-whatsapp-number-consistently-across-the-header-ctas-hero-ctas-contact-page-and-floating-cta",
+      "title": "Ensure the WhatsApp floating button is always visible site-wide and uses the project’s WhatsApp number consistently across the Header CTAs, hero CTAs, contact page, and floating CTA.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-all-user-facing-copy-across-the-site-to-english-including-home-services-contact-and-any-other-public-pages-keeping-the-content-aligned-with-bikaner-express-delivery-s-positioning-fast-local-trustworthy-and-the-requested-section-topics",
+      "title": "Update all user-facing copy across the site to English (including Home/Services/Contact and any other public pages), keeping the content aligned with Bikaner Express Delivery’s positioning (fast, local, trustworthy) and the requested section topics.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-adjust-homepage-sections-to-include-1-about-company-local-delivery-in-bikaner-speed-trust-photo-proof-2-services-list-with-the-exact-requested-service-categories-3-rate-card-preview-or-link-4-founder-section-with-founder-name-sarwan-singh-rathore-a-founder-photo-area-and-a-short-founder-message-and-5-website-proof-trust-section-describing-delivery-photo-proof-whatsapp-confirmation-and-real-time-coordination",
+      "title": "Add/adjust homepage sections to include: (1) About Company (local delivery in Bikaner, speed, trust, photo proof), (2) Services list with the exact requested service categories, (3) Rate Card preview or link, (4) Founder section with founder name \"Sarwan Singh Rathore\", a founder photo area, and a short founder message, and (5) Website Proof & Trust section describing delivery photo proof, WhatsApp confirmation, and real-time coordination.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-join-as-a-rider-section-with-an-apply-as-rider-button-and-a-simple-rider-application-form-collecting-name-mobile-bike-available-yes-no-and-area-persist-submitted-applications-in-the-backend-and-surface-them-in-the-admin-dashboard-for-review",
+      "title": "Implement a \"Join as a Rider\" section with an \"Apply as Rider\" button and a simple rider application form collecting: Name, Mobile, Bike available (Yes/No), and Area; persist submitted applications in the backend and surface them in the Admin dashboard for review.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-rate-card-page-to-include-a-simple-clear-pricing-table-and-an-additional-note-about-fuel-efficient-bike-delivery-40-km-average",
+      "title": "Update the Rate Card page to include a simple, clear pricing table and an additional note about fuel-efficient bike delivery (\"40 km average\").",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-admin-dashboard-for-operational-workflow-that-supports-order-management-create-view-edit-orders-rider-assignment-order-status-updates-pending-picked-delivered-uploading-delivery-proof-photos-and-storing-customer-contact-details-restrict-access-to-admins-only",
+      "title": "Add an Admin dashboard for operational workflow that supports: order management (create/view/edit orders), rider assignment, order status updates (Pending / Picked / Delivered), uploading delivery proof photos, and storing customer contact details; restrict access to admins only.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-rider-portal-with-internet-identity-login-that-allows-riders-to-view-assigned-deliveries-update-delivery-status-pending-picked-delivered-and-upload-delivery-proof-photos-for-assigned-orders-only-restrict-access-to-users-with-the-rider-role",
+      "title": "Create a Rider portal with Internet Identity login that allows riders to: view assigned deliveries, update delivery status (Pending / Picked / Delivered), and upload delivery proof photos for assigned orders only; restrict access to users with the rider role.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-embed-google-maps-location-on-the-contact-page-and-ensure-seo-metadata-is-optimized-for-the-keyword-phrase-bikaner-delivery-service-across-the-site-document-title-description-keywords-and-per-page-meta-where-applicable",
+      "title": "Embed Google Maps location on the Contact page and ensure SEO metadata is optimized for the keyword phrase \"Bikaner delivery service\" across the site (document title/description/keywords and per-page meta where applicable).",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-footer-to-include-company-name-bikaner-express-delivery-phone-whatsapp-website-link-and-the-service-area-text-serving-bikaner-city-villages-dhanis",
+      "title": "Update the footer to include: company name \"Bikaner Express Delivery\", phone & WhatsApp, website link, and the service area text \"Serving Bikaner city, villages & dhanis\".",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-uploaded-image-file-1768716215296-jpg-to-the-frontend-static-assets-and-use-it-as-the-founder-photo-in-the-founder-section-with-a-graceful-fallback-placeholder-if-the-asset-is-missing",
+      "title": "Add the uploaded image file \"1768716215296.jpg\" to the frontend static assets and use it as the founder photo in the Founder section, with a graceful fallback placeholder if the asset is missing.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Marketing website UI/UX with vibrant gradient theme, colorful section backgrounds, smooth animations/hover effects, and mobile-first responsive layout",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Homepage hero with tagline, delivery rider illustration + bike animation, primary CTAs (Book on WhatsApp, Check Rates) and always-visible WhatsApp floating button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Content sections: About Company, Services list, Rate Card table, Founder section (Sarwan Singh Rathore) with photo placeholder and message, and Proof & Trust section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Rider recruitment section \"Join as a Rider\" with Apply button and simple form (Name, Mobile, Bike available Yes/No, Area)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Admin dashboard for order management, rider assignment, order statuses (Pending/Picked/Delivered), delivery photo uploads, and customer contact details",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Rider panel with login, view assigned deliveries, upload delivery proof photos, and update delivery status",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Tech integrations: WhatsApp integration, contact form, Google Maps embed, SEO optimized for \"Bikaner delivery service\", and fast-loading performance",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Footer with company name, phone & WhatsApp, website link, and service area (Bikaner city, villages & dhanis)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Extend the backend data model and API to support orders, rider profiles/role assignment, rider applications, assignments, statuses, and delivery proof photo storage/retrieval, while preserving existing site content/rates features and access control.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Bikaner Express Delivery",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

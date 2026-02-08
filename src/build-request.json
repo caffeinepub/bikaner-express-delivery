@@ -1,0 +1,257 @@
+{
+  "kind": "build_request",
+  "title": "Bikaner Express Delivery: vibrant marketing website + Admin & Rider portals with delivery proof workflow",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Update the marketing website UI to match a modern, energetic, colorful delivery-brand theme using gradients inspired by red/orange/black/white, with smooth animations and hover effects, and ensure all text sections sit on colorful/gradient section backgrounds (avoid plain white blocks).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "Website should NOT look simple or plain.\n- Use a vibrant, colorful background.\n- Wherever text sections appear, use background colors inspired by the company logo colors.\n- Use gradient effects (red, orange, black, white combination – fast delivery theme).\n- Smooth animations, hover effects, modern UI.\n- Mobile-first responsive design.\n...\nIMPORTANT:\n- Use colorful sections behind text instead of plain white.\n- Make it energetic, local, trustworthy.\n- Avoid dull or basic layouts."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All primary sections across Home/Services/How It Works/Rate Card/Contact use colorful/gradient backgrounds behind text (no large plain-white content slabs).",
+        "Buttons/cards/links have consistent hover + focus states and subtle motion (e.g., lift/scale/shine) without harming readability.",
+        "Layout is mobile-first and remains visually strong on small screens (no cramped hero, CTAs remain prominent)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Revise the Home page hero to match the requested copy and layout: show a big bold hero tagline exactly as \"Fast • Local • Trusted Delivery in Bikaner\", include a delivery rider illustration plus a simple bike animation, and include clear primary CTA buttons labeled \"Book Delivery on WhatsApp\" and \"Check Rates\" that navigate to WhatsApp and the rate card page respectively.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "HOMEPAGE:\n- Big bold hero section with tagline:\n  \"Fast • Local • Trusted Delivery in Bikaner\"\n- Add delivery rider illustration and bike animation.\n- Clear CTA buttons:\n  \"Book Delivery on WhatsApp\"\n  \"Check Rates\""
+        ]
+      },
+      "acceptanceCriteria": [
+        "Home hero displays the exact tagline text with the bullet separators (•).",
+        "Two hero CTAs are visible above-the-fold on mobile: one opens WhatsApp chat, one routes to /rate-card.",
+        "A rider illustration is visible in the hero and a bike animation is present (e.g., subtle looping movement)."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Ensure the WhatsApp floating button is always visible site-wide and uses the project’s WhatsApp number consistently across the Header CTAs, hero CTAs, contact page, and floating CTA.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "- WhatsApp floating button always visible.\n...\nTECH FEATURES:\n- WhatsApp integration"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Floating WhatsApp CTA is present on every route (Home, Services, How It Works, Rate Card, Contact, Admin, Rider).",
+        "All WhatsApp links point to the same configured WhatsApp number and open in a new tab/window.",
+        "No page contains a mismatched phone/WhatsApp number compared to the configured values."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Update all user-facing copy across the site to English (including Home/Services/Contact and any other public pages), keeping the content aligned with Bikaner Express Delivery’s positioning (fast, local, trustworthy) and the requested section topics.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "Use English for any user-facing text in the build request."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Public marketing pages contain English copy (no Hindi/Hinglish sentences in headings, paragraphs, or CTAs).",
+        "Key promises (speed, trust, photo proof delivery) are clearly communicated in English."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add/adjust homepage sections to include: (1) About Company (local delivery in Bikaner, speed, trust, photo proof), (2) Services list with the exact requested service categories, (3) Rate Card preview or link, (4) Founder section with founder name \"Sarwan Singh Rathore\", a founder photo area, and a short founder message, and (5) Website Proof & Trust section describing delivery photo proof, WhatsApp confirmation, and real-time coordination.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "SECTIONS TO INCLUDE:\n1. About Company\n...\n2. Services\n   - Local shop delivery\n   - Bus parcel delivery\n   - Documents & medicines\n   - Same-day local delivery\n   - Village & dhani delivery\n...\n5. Founder Section\n   - Founder Name: Sarwan Singh Rathore\n   - Founder Photo: (add image placeholder)\n   - Short founder message for trust building.\n\n6. Website Proof & Trust\n   - Delivery photo proof system\n   - WhatsApp confirmation\n   - Real-time coordination"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Homepage contains clearly labeled sections corresponding to About, Services, Founder, and Proof & Trust.",
+        "Services section includes all five requested service categories explicitly.",
+        "Founder section displays the founder name exactly as provided and shows a photo component with a graceful placeholder/fallback."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Implement a \"Join as a Rider\" section with an \"Apply as Rider\" button and a simple rider application form collecting: Name, Mobile, Bike available (Yes/No), and Area; persist submitted applications in the backend and surface them in the Admin dashboard for review.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "3. Rider Option\n   - Dedicated section:\n     \"Join as a Rider\"\n   - Button: Apply as Rider\n   - Simple form:\n     Name, Mobile, Bike available (Yes/No), Area"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Rider application form validates required fields and submits successfully.",
+        "Backend stores rider applications and returns them via an admin-only query endpoint.",
+        "Admin UI lists rider applications with the submitted fields and submission timestamp."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Update the Rate Card page to include a simple, clear pricing table and an additional note about fuel-efficient bike delivery (\"40 km average\").",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "4. Rate Card\n   - Simple, clear pricing table.\n   - Mention fuel-efficient bike delivery (40 km average)."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Rate card displays a readable pricing table on mobile and desktop.",
+        "A visible note mentions \"40 km average\" fuel-efficient bike delivery."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Add an Admin dashboard for operational workflow that supports: order management (create/view/edit orders), rider assignment, order status updates (Pending / Picked / Delivered), uploading delivery proof photos, and storing customer contact details; restrict access to admins only.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "ADMIN PANEL:\n- Create an admin dashboard with:\n  - Order management\n  - Rider assignment\n  - Order status (Pending / Picked / Delivered)\n  - Upload delivery photos\n  - Customer contact details"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin route remains protected so non-admin users cannot access it.",
+        "Admin can create an order with customer contact details and initial status Pending.",
+        "Admin can assign an order to a rider and change status among Pending/Picked/Delivered.",
+        "Admin can upload one or more proof photos against an order and later view/download them."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Create a Rider portal with Internet Identity login that allows riders to: view assigned deliveries, update delivery status (Pending / Picked / Delivered), and upload delivery proof photos for assigned orders only; restrict access to users with the rider role.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "RIDER PANEL:\n- Rider login\n- View assigned deliveries\n- Upload delivery proof photos\n- Update delivery status"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A dedicated Rider route exists (e.g., /rider) with login and role gating.",
+        "Riders only see orders assigned to them.",
+        "Riders can update status and upload proof photos; uploads are rejected by the backend if the rider is not assigned to that order."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Extend the backend data model and API to support orders, rider profiles/role assignment, rider applications, assignments, statuses, and delivery proof photo storage/retrieval, while preserving existing site content/rates features and access control.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "ADMIN PANEL:\n- Create an admin dashboard with:\n  - Order management\n  - Rider assignment\n  - Order status (Pending / Picked / Delivered)\n  - Upload delivery photos\n  - Customer contact details\n\nRIDER PANEL:\n- Rider login\n- View assigned deliveries\n- Upload delivery proof photos\n- Update delivery status"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend exposes admin-only CRUD/query functions for orders, rider applications, and rider role assignment.",
+        "Backend exposes rider-authorized functions for listing assigned orders, updating status, and uploading proof photos.",
+        "Existing endpoints (getSiteContent/getRates/getContactNumber/getWhatsAppTemplate/updateSiteContent/addRate/removeRate) continue to work."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Embed Google Maps location on the Contact page and ensure SEO metadata is optimized for the keyword phrase \"Bikaner delivery service\" across the site (document title/description/keywords and per-page meta where applicable).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "TECH FEATURES:\n- Google Maps location embed\n- SEO optimized for \"Bikaner delivery service\""
+        ]
+      },
+      "acceptanceCriteria": [
+        "Contact page displays a Google Maps embed without layout overflow on mobile.",
+        "Site metadata (including at least homepage title/description and global keywords) includes \"Bikaner delivery service\" as an exact phrase.",
+        "Per-page meta remains consistent and meaningful for Services/Rate Card/Contact."
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Update the footer to include: company name \"Bikaner Express Delivery\", phone & WhatsApp, website link, and the service area text \"Serving Bikaner city, villages & dhanis\".",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "FOOTER:\n- Company Name: Bikaner Express Delivery\n- Phone & WhatsApp\n- Website link\n- Serving Bikaner city, villages & dhanis"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer displays the specified company name and service area line exactly (case-insensitive acceptable except proper nouns).",
+        "Footer includes clickable phone and WhatsApp links and a website link element."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Add the uploaded image file \"1768716215296.jpg\" to the frontend static assets and use it as the founder photo in the Founder section, with a graceful fallback placeholder if the asset is missing.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "Founder Photo: (add image placeholder)\n\nThe user has uploaded 1 image(s): 1768716215296.jpg."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Founder section renders an image from a static asset path corresponding to the uploaded filename.",
+        "If the image cannot be loaded, a styled placeholder is shown without breaking layout."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor in backend/main.mo; do not introduce additional backend services.",
+    "Do not edit files under frontend/src/components/ui or any frontend immutablePaths (compose them instead).",
+    "Because this is a modification of an existing project with stored state, add backend migration logic only if new stable state is introduced; preserve existing site content/rates/access-control state during upgrade."
+  ],
+  "nonGoals": [
+    "Building a customer-facing live order tracking system for customers.",
+    "Integrations with third-party auth providers (only Internet Identity is allowed).",
+    "Real-time features using WebSockets or push notifications.",
+    "External databases or cloud storage for images; proof photos must be stored/retrieved via the canister or served as frontend static assets when appropriate."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Delivery rider illustration, modern flat style, red/orange/black/white palette (rider-illustration.dim_1200x900.png)",
+      "Motorbike side-view illustration suitable for a looping motion effect, matching the same palette (bike-illustration.dim_900x450.png)",
+      "Abstract fast-delivery gradient background texture with red/orange/black/white accents (speed-gradient-bg.dim_1920x1080.png)"
+    ],
+    "edits": []
+  }
+}

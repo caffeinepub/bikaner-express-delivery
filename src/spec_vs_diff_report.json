@@ -1,0 +1,160 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-08T02:59:36.862Z",
+  "summary": "Diff implements large parts of the vibrant marketing UI, homepage hero CTAs, services/founder/trust sections, rider application UI, admin & rider portals scaffolding, centralized contact config, and adds backend types for orders/riders/applications. However, several requirements are either not evidenced (assets, Contact/Maps, global WhatsApp presence, role gating) or appear incomplete (multi-photo proof, rider role enforcement, founder asset inclusion).",
+  "missing_requirements": [
+    {
+      "id": "REQ-2",
+      "requirement": "Home hero tagline must be exactly \"Fast • Local • Trusted Delivery in Bikaner\" (single line/copy exact).",
+      "reason": "HomePage renders \"Fast • Local • Trusted\" and then separately \"Delivery in Bikaner\" on the next line with different styling, not shown as the exact full tagline string.",
+      "evidence": [
+        "frontend/src/pages/HomePage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Hero must include a simple bike animation.",
+      "reason": "Tailwind keyframes include `bike-move`, but the HomePage hero content showing a bike element using that animation is not present in the provided snippet (only rider illustration reference is visible; bike element/animation not evidenced).",
+      "evidence": [
+        "frontend/tailwind.config.js",
+        "frontend/src/pages/HomePage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "requirement": "Floating WhatsApp CTA is present on every route (Home, Services, How It Works, Rate Card, Contact, Admin, Rider).",
+      "reason": "FloatingWhatsAppCTA component exists, but the diff does not show it being included in the global layout (e.g., SiteLayout) so site-wide visibility across all routes is not evidenced.",
+      "evidence": [
+        "frontend/src/components/FloatingWhatsAppCTA.tsx",
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Homepage includes an About Company section (local delivery in Bikaner, speed, trust, photo proof).",
+      "reason": "HomePage is truncated and does not show an explicit labeled About Company section; only Services/Founder/Proof components are visible as imports and the hero text mentions photo proof, but About section implementation is not evidenced.",
+      "evidence": [
+        "frontend/src/pages/HomePage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Admin dashboard lists rider applications with submitted fields and submission timestamp.",
+      "reason": "AdminPage fetches applications via `useGetRiderApplications`, but the diff snippet does not show UI that renders the applications list or the timestamp field.",
+      "evidence": [
+        "frontend/src/pages/AdminPage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "requirement": "Admin can upload one or more proof photos against an order and later view/download them.",
+      "reason": "Backend order model shows only a single optional `deliveryProof : ?Storage.ExternalBlob` (not an array), indicating only one photo is supported. UI hooks referenced are singular (uploadDeliveryProof).",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/components/admin/AdminOrdersPanel.tsx"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "requirement": "Rider portal must be restricted to users with the rider role; riders only see assigned orders; backend rejects uploads if not assigned.",
+      "reason": "RiderGuard only checks Internet Identity presence and does not check role/authorization. RiderPage passes `caller` explicitly from the client, but backend-side authorization/assignment enforcement is not evidenced in the provided backend snippet.",
+      "evidence": [
+        "frontend/src/components/RiderGuard.tsx",
+        "frontend/src/pages/RiderPage.tsx",
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "requirement": "Backend must preserve existing site content/rates/access-control state during upgrade; add migration logic only if new stable state is introduced.",
+      "reason": "A migration module was added, and main actor uses `(with migration = Migration.run)`, but the migration run function is a no-op and the diff does not evidence stable-state declarations or state preservation strategy for newly added stores (orders/riders/applications).",
+      "evidence": [
+        "backend/migration.mo",
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "requirement": "Contact page displays a Google Maps embed without layout overflow on mobile.",
+      "reason": "No ContactPage changes are shown in the diff summary, so the Google Maps embed is not evidenced.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "requirement": "Per-page meta remains consistent and meaningful for Services/Rate Card/Contact and includes exact phrase \"Bikaner delivery service\" where applicable.",
+      "reason": "Services/Rate Card/How It Works set keywords including the phrase, but Contact page meta implementation is not shown; cannot verify Contact per-page meta consistency.",
+      "evidence": [
+        "frontend/src/pages/ServicesPage.tsx",
+        "frontend/src/pages/RateCardPage.tsx",
+        "frontend/src/pages/HowItWorksPage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "requirement": "Footer includes a website link element.",
+      "reason": "Footer shows company/service area, phone and WhatsApp links, and quick internal links, but a dedicated website link element is not visible in the provided truncated snippet.",
+      "evidence": [
+        "frontend/src/components/SiteFooter.tsx"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "requirement": "Add the uploaded image file \"1768716215296.jpg\" to frontend static assets and use it as founder photo with graceful fallback.",
+      "reason": "FounderCard references `/assets/1768716215296.jpg` and includes fallback UI, but the actual image file is not listed among added files in the diff summary.",
+      "evidence": [
+        "frontend/src/components/FounderCard.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Centralized CONTACT_CONFIG includes a different WhatsApp number than the phone number (+919610685264 vs +919983685264).",
+      "reason": "BuildRequest requires consistency of the project's WhatsApp number across CTAs, but does not request introducing or changing to a second distinct WhatsApp number; this may create mismatches with existing stored backend contact number/template.",
+      "evidence": [
+        "frontend/src/config/contact.ts",
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Added backend migration wiring with a no-op migration module.",
+      "reason": "BuildRequest says to add backend migration logic only if new stable state is introduced; the diff adds migration infrastructure regardless, but does not evidence stable state additions that require it.",
+      "evidence": [
+        "backend/migration.mo",
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "confidence": 0.63,
+  "changed_files": [
+    "backend/main.mo",
+    "backend/migration.mo",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/FloatingWhatsAppCTA.tsx",
+    "frontend/src/components/FounderCard.tsx",
+    "frontend/src/components/GradientSection.tsx",
+    "frontend/src/components/HeaderNav.tsx",
+    "frontend/src/components/HomeServicesCategories.tsx",
+    "frontend/src/components/ProofAndTrustSection.tsx",
+    "frontend/src/components/RiderApplicationSection.tsx",
+    "frontend/src/components/RiderGuard.tsx",
+    "frontend/src/components/SiteFooter.tsx",
+    "frontend/src/components/admin/AdminOrdersPanel.tsx",
+    "frontend/src/components/admin/AdminRidersPanel.tsx",
+    "frontend/src/config/contact.ts",
+    "frontend/src/hooks/usePageMeta.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/pages/AdminPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/HowItWorksPage.tsx",
+    "frontend/src/pages/RateCardPage.tsx",
+    "frontend/src/pages/RiderPage.tsx",
+    "frontend/src/pages/ServicesPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}
