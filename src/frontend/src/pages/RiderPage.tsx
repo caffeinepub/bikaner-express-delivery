@@ -33,7 +33,6 @@ export default function RiderPage() {
     
     try {
       await updateStatus.mutateAsync({
-        caller: identity.getPrincipal(),
         orderId,
         newStatus,
       });
@@ -54,7 +53,6 @@ export default function RiderPage() {
       });
 
       await uploadProof.mutateAsync({
-        caller: identity.getPrincipal(),
         orderId,
         proofPhoto: blob,
       });

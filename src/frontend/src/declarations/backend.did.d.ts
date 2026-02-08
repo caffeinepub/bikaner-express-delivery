@@ -107,7 +107,7 @@ export interface _SERVICE {
   >,
   'getAllOrdersInternal' : ActorMethod<[], Array<DeliveryOrder>>,
   'getAllRiderProfilesInternal' : ActorMethod<[], Array<RiderProfile>>,
-  'getAssignedDeliveries' : ActorMethod<[Principal], Array<DeliveryOrder>>,
+  'getAssignedDeliveries' : ActorMethod<[], Array<DeliveryOrder>>,
   'getAssignedDeliveriesForRiderInternal' : ActorMethod<
     [string],
     Array<DeliveryOrder>
@@ -128,10 +128,7 @@ export interface _SERVICE {
   'isCallerAdmin' : ActorMethod<[], boolean>,
   'removeOrderInternal' : ActorMethod<[bigint], undefined>,
   'removeRate' : ActorMethod<[[bigint, bigint]], undefined>,
-  'updateDeliveryStatus' : ActorMethod<
-    [Principal, bigint, OrderStatus],
-    undefined
-  >,
+  'updateDeliveryStatus' : ActorMethod<[bigint, OrderStatus], undefined>,
   'updateOrderStatusInternal' : ActorMethod<[bigint, OrderStatus], undefined>,
   'updateOrderWithProofOfDeliveryInternal' : ActorMethod<
     [bigint, ExternalBlob],
@@ -155,10 +152,7 @@ export interface _SERVICE {
     [bigint, ExternalBlob],
     undefined
   >,
-  'uploadProofOfDelivery' : ActorMethod<
-    [Principal, bigint, ExternalBlob],
-    undefined
-  >,
+  'uploadProofOfDelivery' : ActorMethod<[bigint, ExternalBlob], undefined>,
 }
 export declare const idlService: IDL.ServiceClass;
 export declare const idlInitArgs: IDL.Type[];

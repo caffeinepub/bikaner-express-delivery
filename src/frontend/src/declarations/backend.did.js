@@ -127,11 +127,7 @@ export const idlService = IDL.Service({
       [IDL.Vec(RiderProfile)],
       ['query'],
     ),
-  'getAssignedDeliveries' : IDL.Func(
-      [IDL.Principal],
-      [IDL.Vec(DeliveryOrder)],
-      ['query'],
-    ),
+  'getAssignedDeliveries' : IDL.Func([], [IDL.Vec(DeliveryOrder)], ['query']),
   'getAssignedDeliveriesForRiderInternal' : IDL.Func(
       [IDL.Text],
       [IDL.Vec(DeliveryOrder)],
@@ -154,11 +150,7 @@ export const idlService = IDL.Service({
   'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
   'removeOrderInternal' : IDL.Func([IDL.Nat], [], []),
   'removeRate' : IDL.Func([IDL.Tuple(IDL.Nat, IDL.Nat)], [], []),
-  'updateDeliveryStatus' : IDL.Func(
-      [IDL.Principal, IDL.Nat, OrderStatus],
-      [],
-      [],
-    ),
+  'updateDeliveryStatus' : IDL.Func([IDL.Nat, OrderStatus], [], []),
   'updateOrderStatusInternal' : IDL.Func([IDL.Nat, OrderStatus], [], []),
   'updateOrderWithProofOfDeliveryInternal' : IDL.Func(
       [IDL.Nat, ExternalBlob],
@@ -182,11 +174,7 @@ export const idlService = IDL.Service({
       [],
     ),
   'uploadDeliveryProofInternal' : IDL.Func([IDL.Nat, ExternalBlob], [], []),
-  'uploadProofOfDelivery' : IDL.Func(
-      [IDL.Principal, IDL.Nat, ExternalBlob],
-      [],
-      [],
-    ),
+  'uploadProofOfDelivery' : IDL.Func([IDL.Nat, ExternalBlob], [], []),
 });
 
 export const idlInitArgs = [];
@@ -311,11 +299,7 @@ export const idlFactory = ({ IDL }) => {
         [IDL.Vec(RiderProfile)],
         ['query'],
       ),
-    'getAssignedDeliveries' : IDL.Func(
-        [IDL.Principal],
-        [IDL.Vec(DeliveryOrder)],
-        ['query'],
-      ),
+    'getAssignedDeliveries' : IDL.Func([], [IDL.Vec(DeliveryOrder)], ['query']),
     'getAssignedDeliveriesForRiderInternal' : IDL.Func(
         [IDL.Text],
         [IDL.Vec(DeliveryOrder)],
@@ -346,11 +330,7 @@ export const idlFactory = ({ IDL }) => {
     'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
     'removeOrderInternal' : IDL.Func([IDL.Nat], [], []),
     'removeRate' : IDL.Func([IDL.Tuple(IDL.Nat, IDL.Nat)], [], []),
-    'updateDeliveryStatus' : IDL.Func(
-        [IDL.Principal, IDL.Nat, OrderStatus],
-        [],
-        [],
-      ),
+    'updateDeliveryStatus' : IDL.Func([IDL.Nat, OrderStatus], [], []),
     'updateOrderStatusInternal' : IDL.Func([IDL.Nat, OrderStatus], [], []),
     'updateOrderWithProofOfDeliveryInternal' : IDL.Func(
         [IDL.Nat, ExternalBlob],
@@ -374,11 +354,7 @@ export const idlFactory = ({ IDL }) => {
         [],
       ),
     'uploadDeliveryProofInternal' : IDL.Func([IDL.Nat, ExternalBlob], [], []),
-    'uploadProofOfDelivery' : IDL.Func(
-        [IDL.Principal, IDL.Nat, ExternalBlob],
-        [],
-        [],
-      ),
+    'uploadProofOfDelivery' : IDL.Func([IDL.Nat, ExternalBlob], [], []),
   });
 };
 

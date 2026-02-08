@@ -81,7 +81,7 @@ export interface backendInterface {
     createOrderInternal(customer: CustomerDetails, parcelSize: string, distanceRange: [bigint, bigint], price: bigint): Promise<bigint>;
     getAllOrdersInternal(): Promise<Array<DeliveryOrder>>;
     getAllRiderProfilesInternal(): Promise<Array<RiderProfile>>;
-    getAssignedDeliveries(caller: Principal): Promise<Array<DeliveryOrder>>;
+    getAssignedDeliveries(): Promise<Array<DeliveryOrder>>;
     getAssignedDeliveriesForRiderInternal(riderMobile: string): Promise<Array<DeliveryOrder>>;
     getCallerUserRole(): Promise<UserRole>;
     getContactNumber(): Promise<string>;
@@ -96,11 +96,11 @@ export interface backendInterface {
     isCallerAdmin(): Promise<boolean>;
     removeOrderInternal(orderId: bigint): Promise<void>;
     removeRate(rangeToRemove: [bigint, bigint]): Promise<void>;
-    updateDeliveryStatus(caller: Principal, orderId: bigint, newStatus: OrderStatus): Promise<void>;
+    updateDeliveryStatus(orderId: bigint, newStatus: OrderStatus): Promise<void>;
     updateOrderStatusInternal(orderId: bigint, newStatus: OrderStatus): Promise<void>;
     updateOrderWithProofOfDeliveryInternal(orderId: bigint, proofPhoto: ExternalBlob): Promise<void>;
     updateOrderWithRiderInternal(orderId: bigint, riderName: string, riderContact: string): Promise<void>;
     updateSiteContent(servicesList: string | null, howItWorks: string | null, rates: Array<Rate> | null, contactNumber: string | null, whatsappTemplate: string | null): Promise<void>;
     uploadDeliveryProofInternal(orderId: bigint, proofPhoto: ExternalBlob): Promise<void>;
-    uploadProofOfDelivery(caller: Principal, orderId: bigint, proofPhoto: ExternalBlob): Promise<void>;
+    uploadProofOfDelivery(orderId: bigint, proofPhoto: ExternalBlob): Promise<void>;
 }

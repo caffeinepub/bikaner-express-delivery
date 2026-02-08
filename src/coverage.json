@@ -1,276 +1,41 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-08T02:59:36.866Z",
+  "generatedAt": "2026-02-08T03:15:32.929Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 13,
-    "implemented": 12,
+    "total": 1,
+    "implemented": 1,
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Update the marketing website UI to match a modern, energetic, colorful delivery-brand theme using gradients inspired by red/orange/black/white, with smooth animations and hover effects, and ensure all text sections sit on colorful/gradient section backgrounds (avoid plain white blocks).",
+        "summary": "Trigger a full rebuild and redeploy of the current application to production, and output the newly generated live production URL after deployment completes.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/index.css",
-          "frontend/tailwind.config.js",
-          "frontend/src/components/GradientSection.tsx",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/ServicesPage.tsx",
-          "frontend/src/pages/HowItWorksPage.tsx",
-          "frontend/src/pages/RateCardPage.tsx",
-          "frontend/src/pages/ContactPage.tsx"
+          "frontend/redeploy-trigger.txt"
         ],
         "matchedFiles": [
-          "frontend/src/index.css",
-          "frontend/tailwind.config.js",
-          "frontend/src/components/GradientSection.tsx",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/ServicesPage.tsx",
-          "frontend/src/pages/HowItWorksPage.tsx",
-          "frontend/src/pages/RateCardPage.tsx"
-        ]
-      },
-      {
-        "id": "REQ-10",
-        "summary": "Extend the backend data model and API to support orders, rider profiles/role assignment, rider applications, assignments, statuses, and delivery proof photo storage/retrieval, while preserving existing site content/rates features and access control.",
-        "status": "unknown",
-        "plannedFiles": [],
-        "matchedFiles": []
-      },
-      {
-        "id": "REQ-11",
-        "summary": "Embed Google Maps location on the Contact page and ensure SEO metadata is optimized for the keyword phrase \"Bikaner delivery service\" across the site (document title/description/keywords and per-page meta where applicable).",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/index.html",
-          "frontend/src/hooks/usePageMeta.ts",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/ServicesPage.tsx",
-          "frontend/src/pages/RateCardPage.tsx",
-          "frontend/src/pages/ContactPage.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/index.html",
-          "frontend/src/hooks/usePageMeta.ts",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/ServicesPage.tsx",
-          "frontend/src/pages/RateCardPage.tsx"
-        ]
-      },
-      {
-        "id": "REQ-12",
-        "summary": "Update the footer to include: company name \"Bikaner Express Delivery\", phone & WhatsApp, website link, and the service area text \"Serving Bikaner city, villages & dhanis\".",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/SiteFooter.tsx",
-          "frontend/src/config/contact.ts"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/SiteFooter.tsx",
-          "frontend/src/config/contact.ts"
-        ]
-      },
-      {
-        "id": "REQ-13",
-        "summary": "Add the uploaded image file \"1768716215296.jpg\" to the frontend static assets and use it as the founder photo in the Founder section, with a graceful fallback placeholder if the asset is missing.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/public/assets/1768716215296.jpg",
-          "frontend/src/components/FounderCard.tsx",
-          "frontend/src/pages/HomePage.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/FounderCard.tsx",
-          "frontend/src/pages/HomePage.tsx"
-        ]
-      },
-      {
-        "id": "REQ-2",
-        "summary": "Revise the Home page hero to match the requested copy and layout: show a big bold hero tagline exactly as \"Fast • Local • Trusted Delivery in Bikaner\", include a delivery rider illustration plus a simple bike animation, and include clear primary CTA buttons labeled \"Book Delivery on WhatsApp\" and \"Check Rates\" that navigate to WhatsApp and the rate card page respectively.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/public/assets/generated/rider-illustration.dim_1200x900.png",
-          "frontend/public/assets/generated/bike-illustration.dim_900x450.png",
-          "frontend/public/assets/generated/speed-gradient-bg.dim_1920x1080.png",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/index.css"
-        ],
-        "matchedFiles": [
-          "frontend/public/assets/generated/rider-illustration.dim_1200x900.png",
-          "frontend/public/assets/generated/bike-illustration.dim_900x450.png",
-          "frontend/public/assets/generated/speed-gradient-bg.dim_1920x1080.png",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/index.css"
-        ]
-      },
-      {
-        "id": "REQ-3",
-        "summary": "Ensure the WhatsApp floating button is always visible site-wide and uses the project’s WhatsApp number consistently across the Header CTAs, hero CTAs, contact page, and floating CTA.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/config/contact.ts",
-          "frontend/src/components/FloatingWhatsAppCTA.tsx",
-          "frontend/src/components/HeaderNav.tsx",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/ContactPage.tsx",
-          "frontend/src/components/SiteFooter.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/config/contact.ts",
-          "frontend/src/components/FloatingWhatsAppCTA.tsx",
-          "frontend/src/components/HeaderNav.tsx",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/components/SiteFooter.tsx"
-        ]
-      },
-      {
-        "id": "REQ-4",
-        "summary": "Update all user-facing copy across the site to English (including Home/Services/Contact and any other public pages), keeping the content aligned with Bikaner Express Delivery’s positioning (fast, local, trustworthy) and the requested section topics.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/ServicesPage.tsx",
-          "frontend/src/pages/HowItWorksPage.tsx",
-          "frontend/src/pages/RateCardPage.tsx",
-          "frontend/src/pages/ContactPage.tsx",
-          "frontend/src/components/SiteFooter.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/ServicesPage.tsx",
-          "frontend/src/pages/HowItWorksPage.tsx",
-          "frontend/src/pages/RateCardPage.tsx",
-          "frontend/src/components/SiteFooter.tsx"
-        ]
-      },
-      {
-        "id": "REQ-5",
-        "summary": "Add/adjust homepage sections to include: (1) About Company (local delivery in Bikaner, speed, trust, photo proof), (2) Services list with the exact requested service categories, (3) Rate Card preview or link, (4) Founder section with founder name \"Sarwan Singh Rathore\", a founder photo area, and a short founder message, and (5) Website Proof & Trust section describing delivery photo proof, WhatsApp confirmation, and real-time coordination.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/FounderCard.tsx",
-          "frontend/src/components/ProofAndTrustSection.tsx",
-          "frontend/src/components/HomeServicesCategories.tsx",
-          "frontend/src/pages/HomePage.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/FounderCard.tsx",
-          "frontend/src/components/ProofAndTrustSection.tsx",
-          "frontend/src/components/HomeServicesCategories.tsx",
-          "frontend/src/pages/HomePage.tsx"
-        ]
-      },
-      {
-        "id": "REQ-6",
-        "summary": "Implement a \"Join as a Rider\" section with an \"Apply as Rider\" button and a simple rider application form collecting: Name, Mobile, Bike available (Yes/No), and Area; persist submitted applications in the backend and surface them in the Admin dashboard for review.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/RiderApplicationSection.tsx",
-          "frontend/src/hooks/useQueries.ts",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/AdminPage.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/RiderApplicationSection.tsx",
-          "frontend/src/hooks/useQueries.ts",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/AdminPage.tsx"
-        ]
-      },
-      {
-        "id": "REQ-7",
-        "summary": "Update the Rate Card page to include a simple, clear pricing table and an additional note about fuel-efficient bike delivery (\"40 km average\").",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/pages/RateCardPage.tsx",
-          "frontend/src/components/RateTable.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/pages/RateCardPage.tsx"
-        ]
-      },
-      {
-        "id": "REQ-8",
-        "summary": "Add an Admin dashboard for operational workflow that supports: order management (create/view/edit orders), rider assignment, order status updates (Pending / Picked / Delivered), uploading delivery proof photos, and storing customer contact details; restrict access to admins only.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/hooks/useQueries.ts",
-          "frontend/src/components/admin/AdminOrdersPanel.tsx",
-          "frontend/src/components/admin/AdminRidersPanel.tsx",
-          "frontend/src/pages/AdminPage.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/hooks/useQueries.ts",
-          "frontend/src/components/admin/AdminOrdersPanel.tsx",
-          "frontend/src/components/admin/AdminRidersPanel.tsx",
-          "frontend/src/pages/AdminPage.tsx"
-        ]
-      },
-      {
-        "id": "REQ-9",
-        "summary": "Create a Rider portal with Internet Identity login that allows riders to: view assigned deliveries, update delivery status (Pending / Picked / Delivered), and upload delivery proof photos for assigned orders only; restrict access to users with the rider role.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/pages/RiderPage.tsx",
-          "frontend/src/components/RiderGuard.tsx",
-          "frontend/src/hooks/useQueries.ts",
-          "frontend/src/App.tsx",
-          "frontend/src/components/HeaderNav.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/pages/RiderPage.tsx",
-          "frontend/src/components/RiderGuard.tsx",
-          "frontend/src/hooks/useQueries.ts",
-          "frontend/src/App.tsx",
-          "frontend/src/components/HeaderNav.tsx"
+          "frontend/redeploy-trigger.txt"
         ]
       }
     ]
   },
   "changedFiles": [
-    "backend/blob-storage/Mixin.mo",
-    "backend/blob-storage/Storage.mo",
     "backend/main.mo",
-    "backend/migration.mo",
     "build-request.json",
-    "caffeine.lock.json",
     "feature_evidence.json",
+    "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/index.html",
-    "frontend/public/assets/generated/bike-illustration.dim_900x450.png",
-    "frontend/public/assets/generated/rider-illustration.dim_1200x900.png",
-    "frontend/public/assets/generated/speed-gradient-bg.dim_1920x1080.png",
-    "frontend/src/App.tsx",
+    "frontend/redeploy-trigger.txt",
     "frontend/src/backend.d.ts",
     "frontend/src/backend.ts",
-    "frontend/src/components/FloatingWhatsAppCTA.tsx",
-    "frontend/src/components/FounderCard.tsx",
-    "frontend/src/components/GradientSection.tsx",
-    "frontend/src/components/HeaderNav.tsx",
-    "frontend/src/components/HomeServicesCategories.tsx",
-    "frontend/src/components/ProofAndTrustSection.tsx",
-    "frontend/src/components/RiderApplicationSection.tsx",
-    "frontend/src/components/RiderGuard.tsx",
-    "frontend/src/components/SiteFooter.tsx",
-    "frontend/src/components/admin/AdminOrdersPanel.tsx",
-    "frontend/src/components/admin/AdminRidersPanel.tsx",
-    "frontend/src/config/contact.ts",
     "frontend/src/declarations/backend.did.d.ts",
     "frontend/src/declarations/backend.did.js",
-    "frontend/src/hooks/usePageMeta.ts",
     "frontend/src/hooks/useQueries.ts",
-    "frontend/src/index.css",
-    "frontend/src/pages/AdminPage.tsx",
-    "frontend/src/pages/HomePage.tsx",
-    "frontend/src/pages/HowItWorksPage.tsx",
-    "frontend/src/pages/RateCardPage.tsx",
     "frontend/src/pages/RiderPage.tsx",
-    "frontend/src/pages/ServicesPage.tsx",
-    "frontend/tailwind.config.js",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

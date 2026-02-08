@@ -12,7 +12,6 @@ import type {
   RiderProfile 
 } from '../backend';
 import { ExternalBlob } from '../backend';
-import { Principal } from '@dfinity/principal';
 
 // Site Content Queries
 export function useGetSiteContent() {
@@ -286,7 +285,7 @@ export function useGetAssignedDeliveries() {
     queryKey: ['assignedDeliveries', identity?.getPrincipal().toString()],
     queryFn: async () => {
       if (!actor || !identity) throw new Error('Actor or identity not available');
-      return actor.getAssignedDeliveries(identity.getPrincipal());
+      return actor.getAssignedDeliveries();
     },
     enabled: !!actor && !isFetching && !!identity,
   });
@@ -297,9 +296,9 @@ export function useUpdateDeliveryStatus() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (params: { caller: Principal; orderId: bigint; newStatus: OrderStatus }) => {
+    mutationFn: async (params: { orderId: bigint; newStatus: OrderStatus }) => {
       if (!actor) throw new Error('Actor not available');
-      return actor.updateDeliveryStatus(params.caller, params.orderId, params.newStatus);
+      return actor.updateDeliveryStatus(params.orderId, params.newStatus);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['assignedDeliveries'] });
@@ -312,9 +311,9 @@ export function useUploadProofOfDelivery() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (params: { caller: Principal; orderId: bigint; proofPhoto: ExternalBlob }) => {
+    mutationFn: async (params: { orderId: bigint; proofPhoto: ExternalBlob }) => {
       if (!actor) throw new Error('Actor not available');
-      return actor.uploadProofOfDelivery(params.caller, params.orderId, params.proofPhoto);
+      return actor.uploadProofOfDelivery(params.orderId, params.proofPhoto);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['assignedDeliveries'] });

@@ -174,7 +174,7 @@ export interface backendInterface {
     createOrderInternal(customer: CustomerDetails, parcelSize: string, distanceRange: [bigint, bigint], price: bigint): Promise<bigint>;
     getAllOrdersInternal(): Promise<Array<DeliveryOrder>>;
     getAllRiderProfilesInternal(): Promise<Array<RiderProfile>>;
-    getAssignedDeliveries(caller: Principal): Promise<Array<DeliveryOrder>>;
+    getAssignedDeliveries(): Promise<Array<DeliveryOrder>>;
     getAssignedDeliveriesForRiderInternal(riderMobile: string): Promise<Array<DeliveryOrder>>;
     getCallerUserRole(): Promise<UserRole>;
     getContactNumber(): Promise<string>;
@@ -189,13 +189,13 @@ export interface backendInterface {
     isCallerAdmin(): Promise<boolean>;
     removeOrderInternal(orderId: bigint): Promise<void>;
     removeRate(rangeToRemove: [bigint, bigint]): Promise<void>;
-    updateDeliveryStatus(caller: Principal, orderId: bigint, newStatus: OrderStatus): Promise<void>;
+    updateDeliveryStatus(orderId: bigint, newStatus: OrderStatus): Promise<void>;
     updateOrderStatusInternal(orderId: bigint, newStatus: OrderStatus): Promise<void>;
     updateOrderWithProofOfDeliveryInternal(orderId: bigint, proofPhoto: ExternalBlob): Promise<void>;
     updateOrderWithRiderInternal(orderId: bigint, riderName: string, riderContact: string): Promise<void>;
     updateSiteContent(servicesList: string | null, howItWorks: string | null, rates: Array<Rate> | null, contactNumber: string | null, whatsappTemplate: string | null): Promise<void>;
     uploadDeliveryProofInternal(orderId: bigint, proofPhoto: ExternalBlob): Promise<void>;
-    uploadProofOfDelivery(caller: Principal, orderId: bigint, proofPhoto: ExternalBlob): Promise<void>;
+    uploadProofOfDelivery(orderId: bigint, proofPhoto: ExternalBlob): Promise<void>;
 }
 import type { CustomerDetails as _CustomerDetails, DeliveryOrder as _DeliveryOrder, ExternalBlob as _ExternalBlob, OrderStatus as _OrderStatus, Rate as _Rate, Time as _Time, UserRole as _UserRole, _CaffeineStorageRefillInformation as __CaffeineStorageRefillInformation, _CaffeineStorageRefillResult as __CaffeineStorageRefillResult } from "./declarations/backend.did.d.ts";
 export class Backend implements backendInterface {
@@ -410,17 +410,17 @@ export class Backend implements backendInterface {
             return result;
         }
     }
-    async getAssignedDeliveries(arg0: Principal): Promise<Array<DeliveryOrder>> {
+    async getAssignedDeliveries(): Promise<Array<DeliveryOrder>> {
         if (this.processError) {
             try {
-                const result = await this.actor.getAssignedDeliveries(arg0);
+                const result = await this.actor.getAssignedDeliveries();
                 return from_candid_vec_n10(this._uploadFile, this._downloadFile, result);
             } catch (e) {
                 this.processError(e);
                 throw new Error("unreachable");
             }
         } else {
-            const result = await this.actor.getAssignedDeliveries(arg0);
+            const result = await this.actor.getAssignedDeliveries();
             return from_candid_vec_n10(this._uploadFile, this._downloadFile, result);
         }
     }
@@ -620,17 +620,17 @@ export class Backend implements backendInterface {
             return result;
         }
     }
-    async updateDeliveryStatus(arg0: Principal, arg1: bigint, arg2: OrderStatus): Promise<void> {
+    async updateDeliveryStatus(arg0: bigint, arg1: OrderStatus): Promise<void> {
         if (this.processError) {
             try {
-                const result = await this.actor.updateDeliveryStatus(arg0, arg1, to_candid_OrderStatus_n20(this._uploadFile, this._downloadFile, arg2));
+                const result = await this.actor.updateDeliveryStatus(arg0, to_candid_OrderStatus_n20(this._uploadFile, this._downloadFile, arg1));
                 return result;
             } catch (e) {
                 this.processError(e);
                 throw new Error("unreachable");
             }
         } else {
-            const result = await this.actor.updateDeliveryStatus(arg0, arg1, to_candid_OrderStatus_n20(this._uploadFile, this._downloadFile, arg2));
+            const result = await this.actor.updateDeliveryStatus(arg0, to_candid_OrderStatus_n20(this._uploadFile, this._downloadFile, arg1));
             return result;
         }
     }
@@ -704,17 +704,17 @@ export class Backend implements backendInterface {
             return result;
         }
     }
-    async uploadProofOfDelivery(arg0: Principal, arg1: bigint, arg2: ExternalBlob): Promise<void> {
+    async uploadProofOfDelivery(arg0: bigint, arg1: ExternalBlob): Promise<void> {
         if (this.processError) {
             try {
-                const result = await this.actor.uploadProofOfDelivery(arg0, arg1, await to_candid_ExternalBlob_n22(this._uploadFile, this._downloadFile, arg2));
+                const result = await this.actor.uploadProofOfDelivery(arg0, await to_candid_ExternalBlob_n22(this._uploadFile, this._downloadFile, arg1));
                 return result;
             } catch (e) {
                 this.processError(e);
                 throw new Error("unreachable");
             }
         } else {
-            const result = await this.actor.uploadProofOfDelivery(arg0, arg1, await to_candid_ExternalBlob_n22(this._uploadFile, this._downloadFile, arg2));
+            const result = await this.actor.uploadProofOfDelivery(arg0, await to_candid_ExternalBlob_n22(this._uploadFile, this._downloadFile, arg1));
             return result;
         }
     }

@@ -18,10 +18,12 @@
   "frontend/src/pages/RateCardPage.tsx": "Rate Card page fetching and displaying rates from backend with updated page header and additional info section backgrounds using semi-transparent surfaces.",
   "frontend/src/pages/ContactPage.tsx": "Contact page with contact info cards, WhatsApp-routed contact form, and Google Maps embed with enhanced card styling using semi-transparent backgrounds and shadows.",
   "frontend/src/pages/AdminPage.tsx": "Admin-only page with AdminGuard for managing site content and rate card with updated header and card backgrounds using semi-transparent surfaces with backdrop blur.",
-  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including getSiteContent, getRates, getContactNumber, getWhatsAppTemplate, getCallerUserRole, and mutations for updating content and managing rates.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including site content, rates, rider applications, order management, and rider portal functionality with proper type-safe backend actor calls.",
   "frontend/src/hooks/usePageMeta.ts": "Custom hook to set document title and meta description for each page for SEO optimization.",
   "frontend/src/utils/whatsapp.ts": "Utility functions for building WhatsApp wa.me links with encoded messages and formatting phone numbers.",
   "frontend/src/index.css": "Global styles with OKLCH color system implementing red/white/black delivery theme with new colorful professional background using layered gradients and subtle patterns for both light and dark modes.",
   "frontend/tailwind.config.js": "Tailwind configuration extending theme with red-based primary colors, custom radius, and delivery-focused design tokens.",
-  "frontend/index.html": "HTML entry point with SEO meta tags, description, and keywords targeting \"Bikaner local delivery\"."
+  "frontend/index.html": "HTML entry point with SEO meta tags, description, and keywords targeting \"Bikaner local delivery\".",
+  "frontend/redeploy-trigger.txt": "Non-user-facing trigger file containing timestamp and nonce to force CI/CD rebuild and redeploy without code changes.",
+  "frontend/src/pages/RiderPage.tsx": "Rider portal page displaying assigned deliveries with status update and proof of delivery upload functionality, protected by RiderGuard authentication."
 }

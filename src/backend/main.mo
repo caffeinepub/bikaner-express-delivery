@@ -4,15 +4,15 @@ import Nat "mo:core/Nat";
 import Text "mo:core/Text";
 import Runtime "mo:core/Runtime";
 import Time "mo:core/Time";
-import Order "mo:core/Order";
+import MixinAuthorization "authorization/MixinAuthorization";
+import AccessControl "authorization/access-control";
+import MixinStorage "blob-storage/Mixin";
 import Storage "blob-storage/Storage";
 import Principal "mo:core/Principal";
-import AccessControl "authorization/access-control";
-import MixinAuthorization "authorization/MixinAuthorization";
-import MixinStorage "blob-storage/Mixin";
-import Migration "migration";
+import Order "mo:core/Order";
 
-(with migration = Migration.run)
+
+
 actor {
   public type Rate = {
     minDistance : Nat;
@@ -142,28 +142,28 @@ actor {
     contentStore.add("default", initialContent);
   };
 
-  public query ({ caller }) func getSiteContent() : async SiteContent {
+  public query func getSiteContent() : async SiteContent {
     switch (contentStore.get("default")) {
       case (?content) { content };
       case (null) { Runtime.trap("Site content not found") };
     };
   };
 
-  public query ({ caller }) func getRates() : async [Rate] {
+  public query func getRates() : async [Rate] {
     switch (contentStore.get("default")) {
       case (?content) { content.rates.sort() };
       case (null) { Runtime.trap("Site content not found") };
     };
   };
 
-  public query ({ caller }) func getContactNumber() : async Text {
+  public query func getContactNumber() : async Text {
     switch (contentStore.get("default")) {
       case (?content) { content.contactNumber };
       case (null) { Runtime.trap("Site content not found") };
     };
   };
 
-  public query ({ caller }) func getWhatsAppTemplate() : async Text {
+  public query func getWhatsAppTemplate() : async Text {
     switch (contentStore.get("default")) {
       case (?content) { content.whatsappTemplate };
       case (null) { Runtime.trap("Site content not found") };
@@ -253,7 +253,7 @@ actor {
     contentStore.add("default", updatedContent);
   };
 
-  public shared ({ caller }) func applyAsRider(
+  public shared func applyAsRider(
     name : Text,
     mobile : Text,
     hasBike : Bool,
@@ -383,7 +383,11 @@ actor {
     orders.values().toArray();
   };
 
-  public query ({ caller }) func getAssignedDeliveries(caller : Principal) : async [DeliveryOrder] {
+  public query ({ caller }) func getAssignedDeliveries() : async [DeliveryOrder] {
+    if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
+      Runtime.trap("Unauthorized: Only users can view assigned deliveries");
+    };
+
     let riderProfile = switch (riders.get(caller.toText())) {
       case (?profile) { profile };
       case (null) { Runtime.trap("Rider profile not found") };
@@ -400,7 +404,11 @@ actor {
     ordersList;
   };
 
-  public shared ({ caller }) func updateDeliveryStatus(caller : Principal, orderId : Nat, newStatus : OrderStatus) : async () {
+  public shared ({ caller }) func updateDeliveryStatus(orderId : Nat, newStatus : OrderStatus) : async () {
+    if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
+      Runtime.trap("Unauthorized: Only users can update delivery status");
+    };
+
     let riderProfile = switch (riders.get(caller.toText())) {
       case (?profile) { profile };
       case (null) { Runtime.trap("Rider profile not found") };
@@ -424,7 +432,11 @@ actor {
     orders.add(orderId, updatedOrder);
   };
 
-  public shared ({ caller }) func uploadProofOfDelivery(caller : Principal, orderId : Nat, proofPhoto : Storage.ExternalBlob) : async () {
+  public shared ({ caller }) func uploadProofOfDelivery(orderId : Nat, proofPhoto : Storage.ExternalBlob) : async () {
+    if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
+      Runtime.trap("Unauthorized: Only users can upload proof of delivery");
+    };
+
     let riderProfile = switch (riders.get(caller.toText())) {
       case (?profile) { profile };
       case (null) { Runtime.trap("Rider profile not found") };
@@ -449,10 +461,22 @@ actor {
   };
 
   public query ({ caller }) func getDeliveryProof(orderId : Nat) : async ?Storage.ExternalBlob {
-    switch (orders.get(orderId)) {
-      case (?order) { order.deliveryProof };
+    let order = switch (orders.get(orderId)) {
+      case (?existingOrder) { existingOrder };
       case (null) { Runtime.trap("Order not found") };
     };
+
+    let isAdmin = AccessControl.hasPermission(accessControlState, caller, #admin);
+    let isAssignedRider = switch (riders.get(caller.toText())) {
+      case (?profile) { order.riderAssignment == ?profile.name };
+      case (null) { false };
+    };
+
+    if (not (isAdmin or isAssignedRider)) {
+      Runtime.trap("Unauthorized: Only admins or assigned riders can view delivery proof");
+    };
+
+    order.deliveryProof;
   };
 
   public shared ({ caller }) func removeOrderInternal(orderId : Nat) : async () {
@@ -508,6 +532,10 @@ actor {
   };
 
   public query ({ caller }) func getAssignedDeliveriesForRiderInternal(riderMobile : Text) : async [DeliveryOrder] {
+    if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
+      Runtime.trap("Unauthorized: Only admins can view rider deliveries");
+    };
+
     let riderProfile = switch (riders.get(riderMobile)) {
       case (?profile) { profile };
       case (null) { Runtime.trap("Rider profile not found") };
@@ -544,6 +572,10 @@ actor {
   };
 
   public query ({ caller }) func getDeliveryProofForOrderInternal(orderId : Nat) : async ?Storage.ExternalBlob {
+    if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
+      Runtime.trap("Unauthorized: Only admins can view delivery proof");
+    };
+
     switch (orders.get(orderId)) {
       case (?order) { order.deliveryProof };
       case (null) { Runtime.trap("Order not found") };
